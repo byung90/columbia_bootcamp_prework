@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jiggle Into JavaScript</title>
+  </head>
+  <body>
+    <p id="num"></p>
+
+    <button id="downBtn">Down</button>
+    <button id="resetBtn">Reset</button>
+    <button id="upBtn">Up</button>
+
+    <script type="text/javascript">
+      document.getElementById("num").innerHTML = 0;
+      document.getElementById("num").value = 0;
+
+      document.getElementById("downBtn").addEventListener("click", function () {
+        var num_temp = document.getElementById("num").value;
+        num_temp = num_temp - 1;
+        document.getElementById("num").value = num_temp;
+        document.getElementById("num").innerHTML = document.getElementById(
+          "num"
+        ).value;
+      });
+
+      document
+        .getElementById("resetBtn")
+        .addEventListener("click", function () {
+          document.getElementById("num").value = 0;
+          document.getElementById("num").innerHTML = 0;
+        });
+
+      document.getElementById("upBtn").addEventListener("click", function () {
+        var num_temp = document.getElementById("num").value;
+        num_temp = num_temp + 1;
+        document.getElementById("num").value = num_temp;
+        document.getElementById("num").innerHTML = document.getElementById(
+          "num"
+        ).value;
+      });
+    </script>
+  </body>
+</html>
